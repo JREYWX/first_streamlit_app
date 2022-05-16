@@ -44,9 +44,6 @@ try:
 except URLError as e:
    streamlit.error()
 
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
-streamlit.dataframe(fruityvice_normalized)
-
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 # Snowflake-related functions
 def get_fruit_load_list():
